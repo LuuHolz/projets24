@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <div className='appContainer'>
+      <div>
         {<Home products={products} isLoading={isLoading} />}
 
       </div>
