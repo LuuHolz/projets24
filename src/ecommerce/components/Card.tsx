@@ -1,11 +1,16 @@
+import { useContext } from 'react';
 import { DataAPI } from '../Types/ProductsAPI.type'
 import { FaPlus } from "react-icons/fa";
-import { useMyContext } from '../context/context';
+import { MyContext } from '../context/context';
 
 const Card = ({ isLoading, product }: { isLoading: boolean; product: DataAPI }) => {
 
-  const { state, dispatch } = useMyContext()
+  const { state, dispatch } = useContext(MyContext)
   
+  const handleChangeFlag = () => {
+    dispatch({ type: 'ACTION_TYPE_1', payload: 'pepe'})
+  }
+
   return (
     <>
       <div className='cardContainer'>
@@ -15,7 +20,7 @@ const Card = ({ isLoading, product }: { isLoading: boolean; product: DataAPI }) 
             <img src={product.images} alt="img" className='imgProduct' />
           </button>
           <button disabled={isLoading} className='btnPlus'><FaPlus /></button>
-
+          
           <p className='categoryProduct'>{product.category.name}</p>
         </div>
 

@@ -1,3 +1,4 @@
+import { MyContextProvider } from './ecommerce/context/context';
 import Home from './ecommerce/home/Home';
 import './ecommerce/styles/styles.scss'
 
@@ -7,10 +8,10 @@ function App() {
 
   return (
     <>
-      <div>
-        {<Home/>}
-
-      </div>
+      <MyContextProvider>
+        {/*  ESTE ES TU CHILDREN DEL PROVIDER */}
+        <Home/>
+      </MyContextProvider>
     </>
   )
 }

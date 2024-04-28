@@ -23,7 +23,7 @@ const Home = () => {
         );
         setSearchResults(filteredProducts);
     };
-    
+
     const handleInputChange = (e) => {
         const valueText = e.target.value;
         setInputValue(valueText);
