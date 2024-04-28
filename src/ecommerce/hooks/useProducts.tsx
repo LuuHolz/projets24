@@ -1,7 +1,10 @@
 import { useState } from 'react'
+import { DataAPI } from '../Types/ProductsAPI.type';
 
 const useProducts = () => {
     const [isLoading, setIsLoading] = useState(false);
+    const [products, setProducts] = useState<[] | DataAPI[]>([])
+    const [error, setError] = useState('')
 
     const getProducts = async () => {
         setIsLoading(true)
@@ -9,17 +12,16 @@ const useProducts = () => {
         try {
             const response = await fetch('https://api.escuelajs.co/api/v1/products');
             const data = await response.json();
-
-            return data
+            setProducts(data)
         } catch (error) {
-            throw error;
+            setError(error)
         } finally {
             setIsLoading(false);
         }
     }
 
     return {
-        isLoading, getProducts
+        isLoading, getProducts, products, error
     }
 }
 

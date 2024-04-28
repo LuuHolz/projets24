@@ -1,32 +1,35 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Open Sans", sans-serif;
-}
-
 .homeContainer{
     height: 100vh;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    grid-gap: 0px; /* Reducir el espacio entre las tarjetas */
+    justify-items: center; 
+    align-items: center; 
 }
 
 .cardContainer{
+    .cardContainer {
+        margin: 0; 
+        width: 50%; /* Ocupa todo el ancho de la celda de la cuadrícula */
+    }
 
 }
 
+
 .imgBtnContainer{
-    
+    position: relative;
 
     .imgProduct{
-        height: 240px;
         border-radius: 15px;
-        
+        height: 240px;
+        width: 100%;
+        object-fit: cover; /* Ajusta la imagen al tamaño del contenedor */
+    
     }
     
     .btnImagen{
         background: none;
         border: none;
-        position: relative;
     }
     
     .btnPlus{
@@ -51,14 +54,14 @@
 }
 
 .titlePriceContainer{
-    display: flex;
-    .titleProduct{
-        font-weight: 300;
-        font-size: 14px;
-    }
+  display: flex;
+  .titleProduct{
+      font-weight: 300;
+      font-size: 14px;
+  }
 
-    .priceProduct{
-        font-weight: 500;
-        font-size: 16px;
-    }
+  .priceProduct{
+      font-weight: 500;
+      font-size: 16px;
+  }
 }
